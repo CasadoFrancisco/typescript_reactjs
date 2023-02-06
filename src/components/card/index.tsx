@@ -53,7 +53,7 @@ export const CardComponent: React.FC<CardProps> = ({
   };
 
   return (
-    <Card sx={{ width: "101%" }}>
+    <Card sx={{ width: "101%", mt:"30px"}}>
       <CardMedia component="img" height="194" image={image} alt="pallea dish" />
       <CardContent>
         <Typography variant="h4" sx={{ mb: 1.5 }}>

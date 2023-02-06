@@ -42,7 +42,7 @@ export const HomePage: React.FC<{}> = () => {
     <Container fixed>
       
       {loading ? (
-        <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 10 }}>
           <CircularProgress />
         </Box>
       ) : (
