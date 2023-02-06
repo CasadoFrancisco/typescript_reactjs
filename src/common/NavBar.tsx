@@ -26,7 +26,14 @@ export const NavBar: React.FC<{}> = () => {
   };
   return (
     <div>
-      <Box sx={{ flexgrow: 1 }} position="fixed" zIndex={1} top="0" left="0" width="100%">
+      <Box
+        sx={{ flexgrow: 1 }}
+        position="fixed"
+        zIndex={1}
+        top="0"
+        left="0"
+        width="100%"
+      >
         <AppBar position="sticky">
           <Toolbar>
             <Container maxWidth="xl">
@@ -37,7 +44,7 @@ export const NavBar: React.FC<{}> = () => {
                 alignItems="center"
               >
                 <Grid item>
-                  <Typography>Rick and Morty</Typography>
+                  <Typography>Rick and Morty App</Typography>
                 </Grid>
                 <Grid item>
                   <Stack direction="row" spacing={2}>
@@ -67,8 +74,8 @@ export const NavBar: React.FC<{}> = () => {
           </Toolbar>
         </AppBar>
         <CartComponents
-        open={open}
-        handleStateViewDrawer={handleStateViewDrawer}
+          open={open}
+          handleStateViewDrawer={handleStateViewDrawer}
         />
       </Box>
     </div>

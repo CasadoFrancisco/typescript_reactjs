@@ -28,7 +28,7 @@ export const CharacterPage: React.FC<{}> = () => {
       .catch((err) => console.error(err));
   });
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", mt:"100px"}}>
       <Container maxWidth="xl">
         {loading ? (
           <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
