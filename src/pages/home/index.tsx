@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { characters } from "../../api/characters";
-import { CardComponent, HeaderComponets } from "../../components";
+import { CardComponent } from "../../components";
 import { TypeCharacter } from "./inteface/character.interface";
 
 export const HomePage: React.FC<{}> = () => {
@@ -40,15 +40,7 @@ export const HomePage: React.FC<{}> = () => {
 
   return (
     <Container fixed>
-      <HeaderComponets
-        title="Hola mundo"
-        description="Hola mundo Bienvenido a una clase de typescript"
-        element={
-          <Button fullWidth variant="contained">
-            Hola mundo
-          </Button>
-        }
-      />
+      
       {loading ? (
         <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
           <CircularProgress />
@@ -58,15 +50,20 @@ export const HomePage: React.FC<{}> = () => {
           <div>
             {allCharacters ? (
               allCharacters.length !== 0 ? (
-                <Grid container spacing={2} direction="row" sx={{ mt: 4,mb:5 }}>
+                <Grid
+                  container
+                  spacing={2}
+                  direction="row"
+                  sx={{ mt: 4, mb: 5 }}
+                >
                   {allCharacters.map((character) => (
-                    <Grid item xs={3}>
+                    <Grid item xs={3} key={character.id}>
                       <CardComponent
                         image={character.image}
-                        key={character.id}
                         status={character.status}
                         species={character.species}
                         name={character.name}
+                        id={character.id}
                       />
                     </Grid>
                   ))}
@@ -88,7 +85,7 @@ export const HomePage: React.FC<{}> = () => {
               count={count}
               page={page}
               onChange={handleChange}
-              sx={{mb:3}}
+              sx={{ mb: 3 }}
               size="large"
             />
           </Box>

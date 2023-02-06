@@ -1,14 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import { ThemeConfig } from './config/theme.config'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
+import App from "./App";
+import { ThemeConfig } from "./config/theme.config";
+import "./index.css";
+import { store } from "./redux/Store";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ThemeConfig>
-      <App />
-    </ThemeConfig>
-    
-  </React.StrictMode>,
-)
+    <Provider store={store}>
+      <ThemeConfig>
+        <App />
+      </ThemeConfig>
+    </Provider>
+  </React.StrictMode>
+);

@@ -37,9 +37,9 @@ export const CharacterPage: React.FC<{}> = () => {
         ) : (
           <Grid container columnSpacing={2} sx={{ mt: 2 }}>
             <Grid item xs={6}>
-              <Typography variant="h1">{character!.name}</Typography>
+              <Typography sx={{mt:3}} variant="h1">{character!.name}</Typography>
               <Divider />
-              <Typography variant="h6">{character!.origin.name}</Typography>
+              <Typography variant="h6" sx={{mt:4}}>{character!.origin.name}</Typography>
               <Box sx={{ mt: 2 }}>
                 {character!.status === "Alive" ? (
                   <Chip
@@ -56,11 +56,20 @@ export const CharacterPage: React.FC<{}> = () => {
                 ) : character!.status === "unknown" ? (<Chip color="default" variant="outlined" label={character!.status} />) : null
               }
               </Box>
+              <Typography variant="h3" sx={{mt:3}}>
+                {character!.location.name}
+              </Typography>
+              <Typography sx={{mt:3}}>
+                  {character!.species}
+              </Typography>
+              <Divider/>
+              
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={5}>
               <img
                 src={character?.image}
-                style={{ width: "90%", borderRadius: "0.5em" }}
+                style={{ width: "85%", borderRadius: "0.5em" }}
+
               />
             </Grid>
           </Grid>
