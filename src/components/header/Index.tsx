@@ -15,33 +15,48 @@ export const HeaderComponets: React.FC<HeaderProps> = ({
   return (
     <div>
       <Box sx={{ width: "100%", height: "350px" }}>
-
         <Grid
           container
           direction="row"
           justifyContent="center"
           alignItems="center"
-          sx={{ height: "100%" }}
+          sx={{ height: "100%", width: "100%" }}
+          xs={12}
         >
-          <Grid item xs={5}>
+          <Grid item xs={10} sx={{ width: "100%", height: "100%" }}>
             <Grid
               container
               direction="column"
               alignItems="center"
               justifyContent="center"
-              sx={{ height: "100%" }}
+              sx={{ width: "100%" }}
+              xs={12}
             >
-                <Grid item>
-                    <Typography variant="h1" > 
-                        {title}
-                    </Typography>
+              <Grid
+                item
+                container
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+                sx={{ mt: 2, height: "100%", width: "100%" }}
+              >
+                <Typography variant="h1">{title}</Typography>
+              </Grid>
+              <Grid
+                item
+                container
+                direction="column"
+                alignItems="center"
+                justifyContent="center"
+                sx={{ mt: 2, height: "100%", width: "100%" }}
+              >
+                <Typography>{description}</Typography>
+              </Grid>
+              {element !== undefined && (
+                <Grid sx={{ mt: 4, width: "100%" }} item>
+                  {element}
                 </Grid>
-                <Grid item sx={{mt:2}}>
-                    <Typography>
-                        {description}
-                    </Typography>
-                </Grid>
-                {element !== undefined && <Grid sx={{mt:4, width:"100%"}} item>{element}</Grid>}
+              )}
             </Grid>
           </Grid>
         </Grid>
